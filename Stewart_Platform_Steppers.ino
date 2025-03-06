@@ -71,22 +71,6 @@ constexpr double gearRatio = 5.18;
 // PID Constants (2s settling time)
 double kp = 0.150, ki = 0.005, kd = 0.11; //0.002
 
-//double kp = 0.230, ki = 0.0118, kd = 0.046; 
-//double kp = 0.045, ki = 0.00002, kd = 0.11; //much better 
-//double kp = 0.0475, ki = 0.00075, kd = 0.0778;
-//double kp = 0.0830, ki = 0.0019, kd = 0.082; 
-
-//double kp = 0.0415, ki = 0.00095, kd = 0.081; //Nearly Perfect
-//double kp = 0.05, ki = 0.002, kd = 0.08; 
-//double kp = 0.072, ki = 0.0025, kd = 0.07;
-//double kp = 0.075, ki = 0.0025, kd = 0.07; //pretty good
-//double kp = 0.068, ki = 0.0025, kd = 0.078; // almost perfect
-//double kp = 0.068, ki = 0.002, kd = 0.25
-//double kp = 0.03263, ki = 0.001886, kd = 0.1411;
-//double kp = 0.01658, ki = 0.0008346, kd = 0.0823;
-//double kp = 0.04302, ki = 0.002855, kd = 0.1621;
-//double kp = 0.07756, ki = 0.004005, kd = 0.3755;
-
 double kpz = 0.0, kiz = 0.0, kdz = 0.0; // PID for z values
 
 double error[3] = {0, 0, 0}, errorPrev[3] = {0, 0, 0}, integr[3] = {0, 0, 0}, deriv[3] = {0, 0, 0}, out[3] = {0, 0, 0};  // PID terms for X and Y directions outf[2] = {0, 0}
@@ -156,7 +140,6 @@ int j = 0;
 void loop() {
   //while ((ball[x] < -5 || ball[x] > 5) && (ball[y] < -5 || ball[y] > 5)){
     PID(0, 0, 0);  // (X setpoint, Y setpoint
-  //PID(0, 0, 0);  // (X setpoint, Y setpoint)
   //detected = false;
   //moveTo(37.75, 0 ,0);
 }
@@ -360,8 +343,6 @@ void moveTo(double hz, double nx, double ny) {
     stepperC.setMaxSpeed(speed[C]);
     stepperC.setAcceleration(speed[C] * 0.80);
     stepperC.moveTo(pos[C]);
-  
-    
 
     // Run steppers to target position
     //while (stepperA.distanceToGo() != 0 || stepperB.distanceToGo() != 0 || stepperC.distanceToGo() != 0) {
