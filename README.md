@@ -21,9 +21,8 @@ The **Precision Ball Control Platform** is a **Stewart platform** designed to co
 ### Prerequisites
 Ensure you have the following dependencies installed:
 - Arduino IDE
-- Python 3 (for computer vision processing)
-- OpenCV (for image processing)
-- NumPy & SciPy (for mathematical calculations)
+- Pixy2 Smart Vision Sensor Libraries
+- PixyMon (for Video tuning)
 - Serial Communication Library (pyserial for Python-Arduino communication)
 
 
